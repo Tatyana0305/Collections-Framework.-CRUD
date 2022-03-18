@@ -11,7 +11,6 @@ public class Game {
     private Collection<Player> items = new ArrayList<>();
 
 
-
     public void setPlayersRegistered(Player player) {
         items.add(player);
     }

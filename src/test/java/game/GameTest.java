@@ -84,7 +84,7 @@ class GameTest {
         game.setPlayersRegistered(alpha);
         game.setPlayersRegistered(beta);
         int expected = 1;
-        int actual = game.round ("Emelyanenko", "Povetkin");
+        int actual = game.round("Emelyanenko", "Povetkin");
         assertEquals(expected, actual);
     }
 
@@ -93,7 +93,7 @@ class GameTest {
         game.setPlayersRegistered(gama);
         game.setPlayersRegistered(alpha);
         int expected = 2;
-        int actual = game.round ("Mike Tyson", "Povetkin");
+        int actual = game.round("Mike Tyson", "Povetkin");
         assertEquals(expected, actual);
     }
 
@@ -102,21 +102,23 @@ class GameTest {
         game.setPlayersRegistered(delta);
         game.setPlayersRegistered(gama);
         int expected = 0;
-        int actual = game.round ("Mike Tyson junior", "Mike Tyson");
+        int actual = game.round("Mike Tyson junior", "Mike Tyson");
         assertEquals(expected, actual);
     }
 
     @Test
-    public void roundIfNotRegistered()  {
+    public void roundIfNotRegistered() {
         game.setPlayersRegistered(gama);
 
         int expected = 0;
 
-        try {int actual = game.round ("Mike Tyson junior", "Muhammad Ali");
-        assertEquals(expected, actual);}
-        catch (NotRegisteredException exception){
+        try {
+            int actual = game.round("Mike Tyson junior", "Muhammad Ali");
+            assertEquals(expected, actual);
+        } catch (NotRegisteredException exception) {
             System.out.println("Player is not registered");
         }
+
     }
 
 }

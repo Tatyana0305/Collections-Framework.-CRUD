@@ -16,5 +16,7 @@ public class Player implements Comparable<Player> {
     private int strength;
 
     @Override
-    public int compareTo(@NotNull Player other){return this.strength - other.strength;}
+    public int compareTo(@NotNull Player other) {
+        return this.strength - other.strength;
+    }
 }
