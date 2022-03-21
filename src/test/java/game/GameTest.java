@@ -117,8 +117,8 @@ class GameTest {
         });
         Assertions.assertEquals("Player Mike Tyson junior is not registered", thrown.getMessage());
 
-        }
-
     }
+
+}
 
 
