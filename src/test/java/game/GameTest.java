@@ -2,6 +2,7 @@ package game;
 
 import domain.NotRegisteredException;
 import domain.Player;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -108,17 +109,16 @@ class GameTest {
 
     @Test
     public void roundIfNotRegistered() {
-        game.setPlayersRegistered(gama);
-
-        int expected = 0;
-
-        try {
+        NotRegisteredException thrown = Assertions.assertThrows(NotRegisteredException.class, () -> {
+            game.setPlayersRegistered(gama);
+            int expected = 0;
             int actual = game.round("Mike Tyson junior", "Muhammad Ali");
             assertEquals(expected, actual);
-        } catch (NotRegisteredException exception) {
-            System.out.println("Player is not registered");
+        });
+        Assertions.assertEquals("Player Mike Tyson junior is not registered", thrown.getMessage());
+
         }
 
     }
 
-}
+
